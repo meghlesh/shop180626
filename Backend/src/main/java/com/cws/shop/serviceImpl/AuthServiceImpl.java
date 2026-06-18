@@ -360,7 +360,7 @@ public AuthServiceImpl(UserRepository userRepository, PasswordEncoder passwordEn
         tokenRepository.save(userToken);
 
         String verificationLink =
-                "http://localhost:8081/auth/verify?token="
+                "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/verify?token="
                         + token;
 
         emailService.sendVerificationEmail(

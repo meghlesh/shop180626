@@ -2276,7 +2276,7 @@
       async function loadUsers(keyword = "") {
         try {
           const response = await fetch(
-            `http://localhost:8081/api/users/search?keyword=${keyword}`,
+            `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/search?keyword=${keyword}`,
           );
 
           const result = await response.json();
@@ -2387,7 +2387,7 @@
 
         try {
           const response = await fetch(
-            `http://localhost:8081/api/users/search?keyword=${keyword}`,
+            `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/search?keyword=${keyword}`,
           );
 
           const result = await response.json();
@@ -2415,7 +2415,7 @@
       });
 
       /* ===== Rahul's Code for NOTIFICATION API CONNECTION ===== */
-const NOTIF_BASE = window.API_BASE_URL || 'http://localhost:8081';
+const NOTIF_BASE = window.API_BASE_URL || 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
 
 function getAuthHeaders() {
   const token = localStorage.getItem('token') || sessionStorage.getItem('token');
@@ -2574,7 +2574,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //       async function getAllUsers() {
       //         try {
-      //           const response = await fetch("http://localhost:8081/api/users");
+      //           const response = await fetch("http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users");
 
       //           const result = await response.json();
 
@@ -2664,7 +2664,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
           const token = localStorage.getItem("token") || sessionStorage.getItem("token");
           const response = await fetch(
-            `http://localhost:8081/api/users/${id}/activate`,
+            `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/${id}/activate`,
             {
               method: "PUT",
               headers: {
@@ -2689,7 +2689,7 @@ document.addEventListener('DOMContentLoaded', function () {
         try {
           const token = localStorage.getItem("token") || sessionStorage.getItem("token");
           const response = await fetch(
-            `http://localhost:8081/api/users/${id}/block`,
+            `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/${id}/block`,
             {
               method: "PUT",
               headers: {
@@ -2722,7 +2722,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       //   try {
       //     const response = await fetch(
-      //       `http://localhost:8081/api/users/${id}`,
+      //       `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/${id}`,
       //       {
       //         method: "DELETE",
       //       },
@@ -2750,7 +2750,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
           const response = await fetch(
-            `http://localhost:8081/api/users/${id}`,
+            `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/${id}`,
             {
               method: "DELETE",
               headers: {
@@ -2814,7 +2814,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           try {
             const response = await fetch(
-              `http://localhost:8081/api/users/filter?status=${status}`,
+              `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users/filter?status=${status}`,
               {
                 headers: {
                   Authorization: "Bearer " + token,
@@ -2868,7 +2868,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //   })();*/
     //   /* CONFIG*/
 /*
-      const BASE_URL = "http://localhost:8081";
+      const BASE_URL = "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net";
       const PAGE_SIZE = 10;
 
       

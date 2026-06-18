@@ -3999,7 +3999,7 @@ document.querySelectorAll(".stars").forEach(starBox => {
 <div class="toast-wrap" id="toastWrap"></div>
 
 <script>
-  var API = 'http://localhost:8081';
+  var API = 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
 
   /* product data for guest cart storage */
   var PRODUCT_DATA = {
@@ -4167,7 +4167,7 @@ async function updateCartCount() {
     try {
         if (isLoggedIn()) {
             const response = await fetch(
-                "http://localhost:8081/api/cart/getcart",
+                "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/cart/getcart",
                 {
                     headers: {
                         "Authorization": "Bearer " +
@@ -4229,7 +4229,7 @@ async function loadFeaturedProducts() {
     try {
 
         const response = await fetch(
-            "http://localhost:8081/public/products/top"
+            "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/public/products/top"
         );
 
         const result = await response.json();

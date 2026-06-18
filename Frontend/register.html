@@ -567,7 +567,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     };
 
     try{
-        const res = await fetch("http://localhost:8081/auth/register",{
+        const res = await fetch("http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/register",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(data)

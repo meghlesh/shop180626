@@ -12,7 +12,7 @@
     try {
 
         const response = await fetch(
-            "http://localhost:8081/auth/me",
+            "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/me",
             {
                 headers: {
                     Authorization: "Bearer " + token
