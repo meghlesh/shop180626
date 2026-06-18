@@ -2751,7 +2751,7 @@ async function markAsRead(notificationId, element) {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/notifications/${notificationId}/read`,
+      `https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/notifications/${notificationId}/read`,
       {
         method: "PUT",
         headers: {
@@ -2805,7 +2805,7 @@ async function loadNotifications() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/notifications/unread",
+      "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/notifications/unread",
       {
         method: "GET",
         headers: {
@@ -2887,7 +2887,7 @@ window.addEventListener("load", loadNotifications);
 
 /* CONFIG
 
-const BASE_URL = "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net";
+const BASE_URL = "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net";
 const PAGE_SIZE = 10;
 
 
@@ -3257,9 +3257,9 @@ window.addEventListener(
 
 // ===================== CONFIG =====================
 // const BASE_URL            = window.location.hostname === 'localhost'
-//                             ? 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'
+//                             ? 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'
 //                             : 'https://your-production-api.com'; // TODO: update before deployment
-const BASE_URL = "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net";
+const BASE_URL = "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net";
 const NOTIF_BASE          = BASE_URL;
 const NOTIF_PAGE_SIZE     = 20;
 const NOTIF_BADGE_MAX     = 99;
@@ -3644,7 +3644,7 @@ async function loadDashboardOrders() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `${window.API_BASE_URL || 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'}/api/admin/orders`,
+      `${window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'}/api/admin/orders`,
       {
         headers: {
           Authorization: "Bearer " + token
@@ -3698,7 +3698,7 @@ async function loadDashboardLicenses() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/admin/licenses?page=0&size=5",
+        "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/admin/licenses?page=0&size=5",
         {
             headers: {
                 "Authorization": `Bearer ${token}`
@@ -3737,7 +3737,7 @@ async function loadDashboardUsers() {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users",
+        "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/users",
         {
             headers: {
                 "Authorization": `Bearer ${token}`

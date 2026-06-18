@@ -2165,8 +2165,8 @@ searchInput.addEventListener("keyup", function () {
 
 <!-- kajal changes -->
  <script>
-     // const API_URL = "http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/admin/orders";
-    const NOTIF_BASE = window.API_BASE_URL || 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
+     // const API_URL = "https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/admin/orders";
+    const NOTIF_BASE = window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
     const API_URL    = NOTIF_BASE + '/api/admin/orders';
 
       const searchInput = document.getElementById("searchInput");
@@ -2662,8 +2662,8 @@ async function applyFilter() {
   if (minAmount)                   params.append('minAmount', minAmount);
   if (maxAmount)                   params.append('maxAmount', maxAmount);
 
- // const url = `http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/admin/orders/filter?${params.toString()}`;
-  const BASE = window.API_BASE_URL || 'http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
+ // const url = `https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/api/admin/orders/filter?${params.toString()}`;
+  const BASE = window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
 const url = `${BASE}/api/admin/orders/filter?${params.toString()}`;
 
   try {

@@ -58,7 +58,7 @@ async function logout() {
   try {
     const token = getToken();
 
-    await fetch("http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/logout", {
+    await fetch("https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/logout", {
       method: "POST",
       headers: {
         Authorization: "Bearer " + token,

@@ -69,7 +69,7 @@ async function logout() {
       localStorage.getItem("token") ||
       sessionStorage.getItem("token");
 
-    await fetch("http://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/logout", {
+    await fetch("https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net/auth/logout", {
       method: "POST",
       headers: {
         "Authorization": "Bearer " + token,
