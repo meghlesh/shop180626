@@ -82,6 +82,7 @@ public class NotificationController {
         );
     }
 
+	
 
     @GetMapping("/unread")
     public ResponseEntity<ApiResponse<List<NotificationResponse>>>
@@ -104,25 +105,30 @@ public class NotificationController {
     }
 
 
-    @GetMapping("/unread/count")
-    public ResponseEntity<ApiResponse<Long>>
-    getUnreadCount(Authentication authentication) {
+   @GetMapping("/unread/count")
+public ResponseEntity<ApiResponse<Long>> getUnreadCount(Authentication authentication) {
 
-        User user = getCurrentUser(authentication);
+    System.out.println("=== Notification Count API Called ===");
+    System.out.println("Authentication = " + authentication);
 
-        Long count =
-                notificationService.getUnreadCount(user.getId());
-
-        ApiResponse<Long> response =
-                new ApiResponse<>(
-                        true,
-                        "Unread notification count fetched successfully",
-                        count
-                );
-
-        return ResponseEntity.ok(response);
+    if (authentication != null) {
+        System.out.println("Principal Class = " +
+                authentication.getPrincipal().getClass());
     }
 
+    User user = getCurrentUser(authentication);
+
+    Long count = notificationService.getUnreadCount(user.getId());
+
+    ApiResponse<Long> response =
+            new ApiResponse<>(
+                    true,
+                    "Unread notification count fetched successfully",
+                    count
+            );
+
+    return ResponseEntity.ok(response);
+}
 
     @PutMapping("/{notificationId}/read")
     public ResponseEntity<ApiResponse<NotificationResponse>>
