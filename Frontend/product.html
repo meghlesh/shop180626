@@ -2487,7 +2487,7 @@ document.addEventListener("click", function(e){
   }
 
   // FETCH SUGGESTIONS
- fetch(`${window.API_BASE_URL || 'http://127.0.0.1:8081'}/admin/dashboard/products/search?keyword=${keyword}`)
+ fetch(`${window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'}/admin/dashboard/products/search?keyword=${keyword}`)
 
     .then(res => res.json())
 
@@ -2541,7 +2541,7 @@ document.addEventListener("click", function(e){
   async function loadProducts(keyword) {
     try {
 
-     const BASE = window.API_BASE_URL || 'http://127.0.0.1:8081';
+     const BASE = window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
 const url = keyword
   ? `${BASE}/admin/dashboard/products/search?keyword=${encodeURIComponent(keyword)}`
   : `${BASE}/admin/dashboard/products/search`;
@@ -2928,7 +2928,7 @@ const url = keyword
 
 
    function getBase() {
-  return window.API_BASE_URL || 'http://127.0.0.1:8081';
+  return window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net';
 }
 
 function getAuthHeaders() {
@@ -3323,7 +3323,7 @@ async function deleteProduct(event, productId) {
             sessionStorage.getItem("token");
 
         const response = await fetch(
-            `${window.API_BASE_URL || 'http://127.0.0.1:8081'}/admin/products/${productId}`,
+            `${window.API_BASE_URL || 'https://api-shop-be-bfdgh8fgbzhcfmhb.southindia-01.azurewebsites.net'}/admin/products/${productId}`,
             {
                 method: "DELETE",
                 headers: {
