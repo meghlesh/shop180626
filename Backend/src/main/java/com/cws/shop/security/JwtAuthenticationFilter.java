@@ -53,6 +53,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             String token = getJwtFromRequest(request);
 
+            System.out.println("Request Path: " + path);
+            System.out.println("Token Found: " + token);
+
             if (token == null) {
                 filterChain.doFilter(request, response);
                 return;
@@ -64,6 +67,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
             String email = jwtService.extractEmail(token);
+            System.out.println("Email From Token: " + email);
+            
 //            System.out.println(email);
 
             User user = userRepository.findByEmail(email).orElse(null);
@@ -73,6 +78,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 return;
             }
 
+        System.out.println("DB Active Token: " + user.getActiveToken());
+
+            if (user.getActiveToken() != null) {
+            System.out.println("Token Match: " +
+            user.getActiveToken().equals(token));
+}
+            
             if (user.getActiveToken() == null ||
                     !user.getActiveToken().equals(token)) {
 
@@ -94,7 +106,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     new WebAuthenticationDetailsSource().buildDetails(request)
             );
 
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+            SecurityContextHolder.getContext().setAuthentication(authentication);   
+           
+            System.out.println("User Role: " + user.getRole());
+             System.out.println("Authority: " + authority.getAuthority());
+
+            System.out.println("Authentication Set Successfully");
 
         } catch (Exception e) {
             SecurityContextHolder.clearContext();
